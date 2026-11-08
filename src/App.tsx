@@ -7,9 +7,7 @@ import {
   Smartphone, TrendingUp, MapPin, Nfc, QrCode,
 } from "lucide-react";
 
-/* Temporary image placeholders — swap these for real imports when you add
-   the files to src/assets/, e.g.  import projApple from "./assets/proj-apple.jpg";
-   then set  image: projApple  below. */
+
 const placeholder = (label: string) =>
   "data:image/svg+xml," +
   encodeURIComponent(
@@ -43,7 +41,7 @@ export default function App() {
   );
 }
 
-/* ---------------- REVEAL (scroll animation wrapper) ---------------- */
+
 function Reveal({
   children,
   delay = 0,
@@ -70,7 +68,7 @@ function Reveal({
   );
 }
 
-/* ---------------- NAVBAR ---------------- */
+
 function Navbar() {
   return (
     <motion.header
@@ -107,7 +105,6 @@ function Navbar() {
   );
 }
 
-/* ---------------- HERO ---------------- */
 function Hero() {
   const reduce = useReducedMotion();
   const headline = "I Build Websites That Get You Found on Google";
@@ -160,7 +157,7 @@ function Hero() {
   );
 }
 
-/* ---------------- ABOUT ---------------- */
+
 function About() {
   return (
     <section id="about" className="py-28 px-6 lg:px-10">
@@ -205,7 +202,7 @@ function SectionLabel({ children }: { children: ReactNode }) {
   );
 }
 
-/* ---------------- PROJECTS ---------------- */
+
 const DEV_PROJECTS = [
   { name: "Apple Store Clone", desc: "Pixel-faithful rebuild of the Apple storefront with product configurator.", tags: ["Next.js", "Tailwind", "Stripe"], image: placeholder("Apple Store Clone") },
   { name: "ReviseCards", desc: "Spaced-repetition flashcard app for students. PWA with offline sync.", tags: ["React", "IndexedDB", "PWA"], image: placeholder("ReviseCards") },
@@ -308,7 +305,7 @@ function Projects() {
   );
 }
 
-/* ---------------- SERVICES ---------------- */
+
 const SERVICES = [
   { icon: Palette, title: "Web Design", desc: "Thoughtful, on-brand designs shaped around your customers and how they actually browse." },
   { icon: Code2, title: "Development", desc: "Fast, mobile-first builds with clean code — smooth on every device, built to last." },
@@ -350,7 +347,6 @@ function Services() {
   );
 }
 
-/* ---------------- GOOGLE REVIEWS CARD ---------------- */
 function ReviewCard() {
   const steps = [
     { icon: Smartphone, title: "Tap or scan", desc: "Your customer taps the card with their phone or scans the QR — no app needed." },
@@ -404,7 +400,7 @@ function ReviewCard() {
             </Reveal>
           </div>
 
-          {/* Card mock */}
+          
           <Reveal delay={0.1}>
             <div className="relative grid place-items-center">
               <div className="absolute w-72 h-72 rounded-full bg-electric/20 blur-3xl" />
@@ -432,7 +428,7 @@ function ReviewCard() {
   );
 }
 
-/* ---------------- PROCESS ---------------- */
+
 const STEPS = [
   { title: "Initial conversation", desc: "We chat about the type of website you want, your goals, and the main features you need — no pressure, no jargon." },
   { title: "Sign the agreement", desc: "Once we've agreed the scope, we sign a simple contract so we're both clear on exactly what's included, the timeline and the price." },
@@ -479,8 +475,7 @@ function Process() {
   );
 }
 
-/* ---------------- CONTACT ---------------- */
-/* lucide-react removed brand icons, so Instagram is an inline SVG. */
+
 function InstagramIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -599,7 +594,7 @@ function Field({ label, type, placeholder }: { label: string; type: string; plac
   );
 }
 
-/* ---------------- FOOTER ---------------- */
+
 function Footer() {
   return (
     <footer className="border-t border-border py-12 px-6 lg:px-10 mt-10">
