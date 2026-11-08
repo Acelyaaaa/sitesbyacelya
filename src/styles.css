@@ -1,0 +1,114 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-electric: var(--electric);
+  --color-electric-soft: var(--electric-soft);
+  --font-sans: "Space Grotesk", system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+
+  --shadow-glow: 0 0 30px color-mix(in oklab, var(--electric) 18%, transparent);
+  --shadow-glow-lg: 0 0 60px color-mix(in oklab, var(--electric) 24%, transparent);
+  --shadow-card: 0 20px 60px -20px color-mix(in oklab, var(--navy) 10%, transparent);
+}
+
+:root {
+  --radius: 0.75rem;
+  /* Very light, soft purple palette */
+  --background: oklch(0.96 0.012 300);
+  --foreground: oklch(0.28 0.045 300);
+  --navy: oklch(0.36 0.065 300);
+  --navy-deep: oklch(0.28 0.055 300);
+  --electric: oklch(0.60 0.13 300);
+  --electric-soft: oklch(0.72 0.09 305);
+  --card: oklch(0.98 0.008 300);
+  --card-foreground: oklch(0.28 0.045 300);
+  --popover: oklch(0.98 0.008 300);
+  --popover-foreground: oklch(0.28 0.045 300);
+  --primary: oklch(0.60 0.13 300);
+  --primary-foreground: oklch(0.98 0.008 300);
+  --secondary: oklch(0.92 0.02 300);
+  --secondary-foreground: oklch(0.36 0.065 300);
+  --muted: oklch(0.90 0.015 300);
+  --muted-foreground: oklch(0.52 0.04 300);
+  --accent: oklch(0.60 0.13 300);
+  --accent-foreground: oklch(0.98 0.008 300);
+  --destructive: oklch(0.65 0.22 25);
+  --destructive-foreground: oklch(0.98 0.008 300);
+  --border: oklch(0.82 0.025 300 / 60%);
+  --input: oklch(0.92 0.02 300);
+  --ring: oklch(0.60 0.13 300);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--electric); color: var(--primary-foreground); }
+}
+
+@keyframes word-in {
+  from { opacity: 0; transform: translateY(20px) rotateX(40deg); filter: blur(8px); }
+  to { opacity: 1; transform: translateY(0) rotateX(0); filter: blur(0); }
+}
+.word-in {
+  display: inline-block;
+  opacity: 0;
+  animation: word-in 0.7s cubic-bezier(.2,.7,.2,1) forwards;
+  transform-origin: 50% 100%;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  50% { transform: translate(40px,-30px) scale(1.08); }
+}
+.animate-float-slow { animation: float-slow 14s ease-in-out infinite; }
+
+@keyframes float-slower {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  50% { transform: translate(-50px,40px) scale(1.12); }
+}
+.animate-float-slower { animation: float-slower 22s ease-in-out infinite; }
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--electric) 45%, transparent), 0 0 40px color-mix(in oklab, var(--electric) 20%, transparent); }
+  50% { box-shadow: 0 0 0 8px color-mix(in oklab, var(--electric) 0%, transparent), 0 0 70px color-mix(in oklab, var(--electric) 35%, transparent); }
+}
+.pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
