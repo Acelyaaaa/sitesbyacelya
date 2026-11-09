@@ -430,12 +430,12 @@ function ReviewCard() {
 
 
 const STEPS = [
-  { title: "Initial conversation", desc: "We chat about the type of website you want, your goals, and the main features you need — no pressure, no jargon." },
+  { title: "Initial conversation", desc: "We have a chat about the type of website you want, your goals and the main features you need" },
   { title: "Sign the agreement", desc: "Once we've agreed the scope, we sign a simple contract so we're both clear on exactly what's included, the timeline and the price." },
   { title: "Set up payment", desc: "A small deposit gets the project officially booked in and design work started." },
   { title: "First draft", desc: "I share the first version of your site so you can see your brand, content and layout coming to life." },
-  { title: "Revisions", desc: "We refine the details together — colours, copy, imagery, sections — until it feels exactly right." },
-  { title: "Go live", desc: "When you're completely happy, we launch your site, connect your domain, and get you ready to grow." },
+  { title: "Revisions", desc: "We refine the details together: the colours, copy, imagery, sections, until it feels exactly right." },
+  { title: "Go live", desc: "When you're completely happy, we launch your site, connect your domain and get you ready to grow." },
 ];
 
 function Process() {
@@ -451,7 +451,7 @@ function Process() {
               How we get started.
             </h2>
             <p className="text-muted-foreground max-w-md">
-              A calm, simple process from first message to launch day.
+              A simple process from first message to launch day.
             </p>
           </div>
         </Reveal>
