@@ -513,7 +513,7 @@ function Contact() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-6 text-muted-foreground max-w-md">
-                Drop a message — replies usually within an hour, or reach me
+                Drop a message in the form below or reach me
                 directly on WhatsApp.
               </p>
             </Reveal>
