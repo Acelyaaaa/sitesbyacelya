@@ -448,7 +448,7 @@ function Process() {
         <Reveal delay={0.05}>
           <div className="flex flex-wrap items-end justify-between gap-6 mb-14">
             <h2 className="text-4xl sm:text-5xl font-bold tracking-tight max-w-2xl">
-              How we get started.
+              How we get started:
             </h2>
             <p className="text-muted-foreground max-w-md">
               A simple process from first message to launch day.
